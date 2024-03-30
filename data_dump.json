@@ -1,0 +1,79 @@
+[
+  {
+    "model": "catalog.category",
+    "pk": 1,
+    "fields": {
+      "name": "ntcn",
+      "description": "nnnnn"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 2,
+    "fields": {
+      "name": "Supreme",
+      "description": ""
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 3,
+    "fields": {
+      "name": "Middle",
+      "description": ""
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 4,
+    "fields": {
+      "name": "Top",
+      "description": ""
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 5,
+    "fields": {
+      "name": "Discount",
+      "description": ""
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 6,
+    "fields": {
+      "name": "Second hand",
+      "description": ""
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 7,
+    "fields": {
+      "name": "Test1",
+      "description": ""
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 8,
+    "fields": {
+      "name": "Test2",
+      "description": "Тестовая категория 2"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 1,
+    "fields": {
+      "name": "ddddd",
+      "description": "dddddd",
+      "preview_image": "",
+      "category": 1,
+      "price": "12.00",
+      "created_at": "2024-03-29",
+      "updated_at": "2024-03-29"
+    }
+  }
+]

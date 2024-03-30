@@ -26,7 +26,7 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='Цена за покупку')
     created_at = models.DateField()
     updated_at = models.DateField()
-    manufactured_at = models.DateField(verbose_name='Дата производства продукта', **NULLABLE)
+    #manufactured_at = models.DateField(verbose_name='Дата производства продукта', **NULLABLE)
 
 
     class Meta:

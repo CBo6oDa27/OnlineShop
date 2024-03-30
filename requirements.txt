@@ -1,6 +1,7 @@
 Django
 psycopg2-binary
 pillow
+ipython
 asgiref==3.8.0
 build==1.0.3
 CacheControl==0.13.1
