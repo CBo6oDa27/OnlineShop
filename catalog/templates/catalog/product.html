@@ -1,0 +1,14 @@
+{% extends 'catalog/base.html' %}
+{% load image_view %}
+{% block content%}
+    <div class="card-body">
+        <h1 class="card-title pricing-card-title">{{ object.name }}</h1>
+            <img class="card-img-top" src="{% media_filter object.preview_image %}" style="width: 50px;">
+            <ul>
+                <li>{{ object.description | truncatechars:100 }}</li>
+                <li>Цена: {{ object.price }}</li>
+                <li>Дата создания: {{ object.created_at }}</li>
+                <li>Дата обновления: {{ object.updated_at }}</li>
+            </ul>
+    </div>
+{% endblock %}
