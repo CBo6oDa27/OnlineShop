@@ -1,0 +1,16 @@
+{% extends 'catalog/base.html' %}
+{% load image_view %}
+{% block content%}
+    <div class="card-body">
+        <h1 class="card-title pricing-card-title">{{ object.title }} - {{ object.slug }}</h1>
+        <div class="card-body">
+            <p>
+                {{ object.content }}
+            </p>
+        </div>
+            <ul>
+                <li>Дата создания: {{ object.created_at }}</li>
+                <li>Просмотры: {{ object.views_count }}</li>
+            </ul>
+    </div>
+{% endblock %}
