@@ -8,7 +8,7 @@ from pytils.translit import slugify
 
 class BlogCreateView(CreateView):
     model = Blog
-    fields = ('title', 'content',)
+    fields = ('title', 'content', 'preview_image')
     success_url = reverse_lazy('blog:list')
 
     def form_valid(self, form):
@@ -22,7 +22,7 @@ class BlogCreateView(CreateView):
 
 class BlogUpdateView(UpdateView):
     model = Blog
-    fields = ('title', 'content',)
+    fields = ('title', 'content', 'preview_image')
 
     def form_valid(self, form):
         if form.is_valid():
