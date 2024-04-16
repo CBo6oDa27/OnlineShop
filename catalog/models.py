@@ -2,6 +2,7 @@ from django.db import models
 
 NULLABLE = {'blank': True, 'null': True}
 
+
 class Category(models.Model):
     """Описание модели."""
     name = models.CharField(max_length=100, verbose_name='Наименование')
@@ -26,8 +27,6 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='Цена за покупку')
     created_at = models.DateField()
     updated_at = models.DateField()
-    #manufactured_at = models.DateField(verbose_name='Дата производства продукта', **NULLABLE)
-
 
     class Meta:
         verbose_name = 'продукт'
@@ -37,6 +36,3 @@ class Product(models.Model):
     def __str__(self):
         """Строковое представление модели"""
         return self.name
-
-
-

@@ -1,5 +1,4 @@
 from django.urls import path
-from catalog.views import ProductsListView, ProductDetailView, ContactsTemplateView
 from blog.apps import BlogConfig
 from blog.views import BlogCreateView, BlogListView, BlogDetailVew, BlogUpdateView, BlogDeleteView
 

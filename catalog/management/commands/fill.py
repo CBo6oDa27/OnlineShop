@@ -28,7 +28,6 @@ class Command(BaseCommand):
         # Очистка данных в модели Catalog
         Category.objects.all().delete()
 
-
         categories_to_create = []
         products_to_create = []
         category_list = self.json_read_categories()
@@ -47,6 +46,3 @@ class Command(BaseCommand):
             products_to_create.append(Product(**fields_dict))
 
         Product.objects.bulk_create(products_to_create)
-
-
-

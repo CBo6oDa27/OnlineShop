@@ -1,10 +1,11 @@
-from django.shortcuts import render
 from django.views.generic import CreateView, ListView, DetailView, UpdateView, DeleteView
 from blog.models import Blog
 from django.urls import reverse_lazy, reverse
 from pytils.translit import slugify
 
 # Create your views here.
+
+
 class BlogCreateView(CreateView):
     model = Blog
     fields = ('title', 'content',)
@@ -19,11 +20,9 @@ class BlogCreateView(CreateView):
         return super().form_valid(form)
 
 
-
 class BlogUpdateView(UpdateView):
     model = Blog
     fields = ('title', 'content',)
-    #success_url = reverse_lazy('blog:list')
 
     def form_valid(self, form):
         if form.is_valid():
@@ -49,7 +48,6 @@ class BlogListView(ListView):
         queryset = super().get_queryset(*args, **kwargs)
         queryset = queryset.filter(published=True)
         return queryset
-
 
 
 class BlogDetailVew(DetailView):
