@@ -3,6 +3,7 @@
 {% block content%}
     <div class="card-body">
         <h1 class="card-title pricing-card-title">{{ object.title }} - {{ object.slug }}</h1>
+        <img class="card-img-top" src="{% media_filter object.preview_image %}" style="width: 50px;">
         <div class="card-body">
             <p>
                 {{ object.content }}
