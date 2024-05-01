@@ -36,3 +36,17 @@ class Product(models.Model):
     def __str__(self):
         """Строковое представление модели"""
         return self.name
+
+
+class Version(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, verbose_name='Продукт')
+    number = models.IntegerField(verbose_name='Номер')
+    name = models.CharField(max_length=100, verbose_name='Название')
+    is_current = models.BooleanField(verbose_name='Текущая')
+
+    def __str__(self):
+        return f'{self.name}'
+
+    class Meta:
+        verbose_name = 'версия'
+        verbose_name_plural = 'версии'
