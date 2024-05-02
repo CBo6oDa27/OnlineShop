@@ -1,5 +1,5 @@
 from django import forms
-from catalog.models import Product
+from catalog.models import Product, Version
 
 forbidden_words = ['казино', 'криптовалюта', 'крипта', 'биржа', 'дешево', 'бесплатно', 'обман', 'полиция', 'радар']
 
@@ -36,6 +36,6 @@ class ProductForm(StyleMixin, forms.ModelForm):
 class VersionForm(StyleMixin, forms.ModelForm):
 
     class Meta:
-        model = Product
+        model = Version
         fields = '__all__'
 
