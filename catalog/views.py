@@ -83,6 +83,10 @@ class VersionUpdateView(UpdateView):
     form_class = VersionForm
     success_url = reverse_lazy('catalog:products')
 
+    def get_success_url(self):
+        product = self.object.product
+        return reverse_lazy('catalog:product', kwargs={'pk': product.pk})
+
 
 class VersionDetailView(DetailView):
     model = Version
