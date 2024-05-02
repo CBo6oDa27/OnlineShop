@@ -75,7 +75,7 @@ class VersionListView(ListView):
 class VersionCreateView(CreateView):
     model = Version
     form_class = VersionForm
-    success_url = reverse_lazy('catalog:products')
+    success_url = reverse_lazy('catalog:index')
 
 
 class VersionUpdateView(UpdateView):

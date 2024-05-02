@@ -10,8 +10,8 @@ urlpatterns = [
     path('product/<int:pk>/', ProductDetailView.as_view(), name='product'),
     path('create', ProductCreateView.as_view(), name='create_product'),
     path('update/<int:pk>/', ProductUpdateView.as_view(), name='update_product'),
-    path('version/', VersionCreateView.as_view(), name='version_create'),
+    path('version/', VersionCreateView.as_view(), name='create_version'),
     path('versions/<int:pk>', VersionListView.as_view(), name='versions'),
-    path('version/<int:pk>/update/', VersionUpdateView.as_view(), name='version_update'),
+    path('version/<int:pk>/update/', VersionUpdateView.as_view(), name='update_version'),
     path('version/<int:pk>', VersionDetailView.as_view(), name='version_detail')
 ]
