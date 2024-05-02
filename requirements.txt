@@ -1,5 +1,5 @@
 flake8
-Django
+Django==4.2
 psycopg2-binary
 pillow
 ipython
