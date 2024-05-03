@@ -144,10 +144,8 @@ LOGOUT_REDIRECT_URL = '/'
 
 EMAIL_HOST = 'smtp.yandex.ru'
 EMAIL_PORT = 465
-#EMAIL_HOST_USER = os.environ.get('sending_email')
-#EMAIL_HOST_PASSWORD = os.environ.get('sending_password')
-EMAIL_HOST_USER = 'CBo6oDa@yandex.ru'
-EMAIL_HOST_PASSWORD = 'lioyruvgmzrqeefm'
+EMAIL_HOST_USER = os.environ.get('sending_email')
+EMAIL_HOST_PASSWORD = os.environ.get('sending_password')
 EMAIL_USE_TLS = False
 EMAIL_USE_SSL = True
 
