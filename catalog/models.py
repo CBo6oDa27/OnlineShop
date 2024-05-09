@@ -26,14 +26,20 @@ class Product(models.Model):
     preview_image = models.ImageField(upload_to='products/', verbose_name='Изображение(превью)', **NULLABLE)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Категория')
     price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='Цена за покупку')
-    created_at = models.DateField()
-    updated_at = models.DateField()
+    created_at = models.DateField(auto_now=True, verbose_name='дата создания')
+    updated_at = models.DateField(auto_now=True, verbose_name='дата обновления')
     owner = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Владелец', **NULLABLE)
+    is_published = models.BooleanField(default=False, verbose_name='опубликована')
 
     class Meta:
         verbose_name = 'продукт'
         verbose_name_plural = 'продукты'
         ordering = ('name',)
+        permissions = [
+            ('can_edit_publication_status', 'может отменять публикацию продукта'),
+            ('can_edit_description', 'может отменять публикацию продукта'),
+            ('can_change_category', 'может менять категорию любого продукта')
+        ]
 
     def __str__(self):
         """Строковое представление модели"""
