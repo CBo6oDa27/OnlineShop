@@ -6,6 +6,8 @@ from catalog.forms import ProductForm, ProductModeratorForm, VersionForm
 from django.forms import inlineformset_factory
 from django.contrib.auth.mixins import LoginRequiredMixin
 
+from catalog.services import get_products_from_cache
+
 
 # Create your views here.
 class ProductsListView(ListView):
@@ -14,7 +16,8 @@ class ProductsListView(ListView):
 
     def get_context_data(self, *args, **kwargs):
         context_data = super().get_context_data(*args, **kwargs)
-        products = Product.objects.all()
+        #products = Product.objects.all()
+        products = get_products_from_cache()
 
         for product in products:
             versions = Version.objects.filter(product=product)
