@@ -27,4 +27,4 @@ class PasswordRecoveryForm(StyleMixin, PasswordResetForm):
 
     class Meta:
         model = User
-        fields ='__all__'
+        fields = '__all__'

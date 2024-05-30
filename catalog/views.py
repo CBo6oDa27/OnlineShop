@@ -16,7 +16,6 @@ class ProductsListView(ListView):
 
     def get_context_data(self, *args, **kwargs):
         context_data = super().get_context_data(*args, **kwargs)
-        #products = Product.objects.all()
         products = get_products_from_cache()
 
         for product in products:
@@ -77,9 +76,7 @@ class ProductUpdateView(LoginRequiredMixin, UpdateView):
         user = self.request.user
         if user == self.object.owner:
             return ProductForm
-        elif (user.has_perm('catalog.can_edit_publication_status')
-              and user.has_perm('catalog.can_edit_description')
-              and user.has_perm('catalog.can_change_category')):
+        elif user.has_perm('catalog.can_edit_publication_status') and user.has_perm('catalog.can_edit_description') and user.has_perm('catalog.can_change_category'):
             return ProductModeratorForm
         else:
             raise PermissionDenied

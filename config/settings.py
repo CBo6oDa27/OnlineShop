@@ -165,5 +165,4 @@ if CACHE_ENABLED:
             "BACKEND": "django.core.cache.backends.redis.RedisCache",
             "LOCATION": os.getenv('LOCATION'),
         }
-}
-
+    }

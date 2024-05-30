@@ -27,7 +27,7 @@ class RegisterView(CreateView):
         send_mail(
             subject="Подтверждение почты",
             message=f"Перейдите по ссылке для подтверждения почты {url}",
-            from_email= EMAIL_HOST_USER,
+            from_email=EMAIL_HOST_USER,
             recipient_list=[user.email]
         )
         return super().form_valid(form)
@@ -78,5 +78,3 @@ class PasswordRecoveryView(TemplateView):
             [user.email],
         )
         return redirect(reverse_lazy("users:login"))
-
-
